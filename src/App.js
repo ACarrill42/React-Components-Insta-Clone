@@ -23,7 +23,7 @@ const App = () => {
   const likePost = postId => {
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
-
+      
       The state of the app lives at the top of the React tree, but it wouldn't be fair for nested components not to be able to change state!
       This function is passed down to nested components through props, allowing them to increase the number of likes of a given post.
 
@@ -32,6 +32,14 @@ const App = () => {
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
      */
+    setPosts(posts.map(id => {
+        if (id === postId ) {
+          return  <div> {posts} </div>   
+        } else {
+          return posts
+        }
+    }));
+
     
   };
 
